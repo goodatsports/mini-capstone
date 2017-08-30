@@ -1,11 +1,12 @@
 <h1> Welcome to The Store </h1>
 <h3>stay a while... </h3>
-
+<br>
 <% @inventory.each_with_index do |item, i| %>
-<ul>
-  <li><h2><%= item.name%>: $<%= item.price %> </h2>
+
+  <h2><%= item.name%>: $<%= item.price %> </h2>
   <img src="<%= item.image %>">
   <h4>- <%= item.description %></h4>
-  </li>
-</ul>
+  <br>
 <% end %>
+
+
