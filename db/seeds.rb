@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ex_products = Product.create({
+  name: "trumpy",
+  price: 44444,
+  image: "http://images.clipartpanda.com/trumpet-clip-art-u18544225.jpg",
+  description: "music guy huh"
+  })

@@ -1,0 +1,8 @@
+<h2><%= @product.name%>: $<%= @product.price %> </h2>
+<img src="<%= @product.image %>"></li>
+<h4>- <%= @product.description %></h4>
+
+<%= form_tag "/products/#{@product.id}", method: :delete do %>
+  <input type="submit" value="DELET THIS">
+  <% end %>
+
