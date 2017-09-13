@@ -1,19 +1,21 @@
 <h1> Welcome to The Store </h1>
 <h3>stay a while... </h3>
-<br>
-<ol>
-<% @inventory.each_with_index do |item, i| %>
-  <li>
-    <ul>
-      <li>
-        <li><h2><a href="/products/<%= item.id %>"><%= item.name%></a>: $<%= item.price %> </h2></li>
-        <li><img src="<%= item.image %>"></li>
-        <li><h4>- <%= item.description %></h4></li>
-      </li>
-    </ul>
-  </li>
-  <br>
-<% end %>
-</ol>
 
+
+<% @inventory.each_slice(3) do |three_products| %>
+  <div class="row">
+    <% three_products.each_with_index do |product, i| %>
+      <div class="col-sm-4">
+      <div class="card" style="width: 20rem;">
+        <img class="card-img-top" src="<%= product.images.first.url %>" alt="Card image cap">
+        <div class="card-body">
+          <h4 class="card-title"><%= product.name %>: $<%= product.total %></h4>
+          <p class="card-text"><%= product.description %> </p>
+          <a href="/products/<%= product.id %>" class="btn btn-primary">Tell me more</a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+<% end %>
 

@@ -1,6 +1,13 @@
-<h2><%= @product.name%>: $<%= @product.price %> </h2>
-<img src="<%= @product.image %>"></li>
+<h2><%= @product.name%>: <a style="color: <%= @product.price_color %>">$<%= @product.total %></a></h2>
+ <h3 style="color: red"> <%= @product.sale_message %></h3>
+
+<img src="<%= @product.images.first.url %>"></li>
 <h4>- <%= @product.description %></h4>
+<h4>By: <%= @product.supplier.name %></h4>
+
+<%= form_tag "/products/#{@product.id}/edit", method: :get do %>
+  <input type="submit" value="EDIT THIS">
+  <% end %>
 
 <%= form_tag "/products/#{@product.id}", method: :delete do %>
   <input type="submit" value="DELET THIS">

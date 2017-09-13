@@ -1,7 +1,7 @@
 <h1> EDIT THAT <%= @product.name %> </h1>
 <br>
 
-<%= form_tag "/products/#{@product.id}/edit", method: :update do %>
+<%= form_tag "/products/#{@product.id}", method: :patch do %>
   <div>
     Name: <input type="text" name="name" value="<%=@product.name %>">
   </div>
